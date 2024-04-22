@@ -1,6 +1,5 @@
 from node import Node
 
-
 class Tree:
     """ Tree class for binary tree """
 
@@ -62,15 +61,36 @@ class Tree:
             return self._find(data, node.right)
 
     def deleteTree(self):
+        """
+            Method to delete a tree by nulling its root
+
+            Returns:
+                None
+        """
         # TODO 1
         self.root = None
 
     def printTree(self):
+        """
+            Method to print a tree inorder
+
+            Returns:
+                None
+        """
         # TODO 1
         if self.root is not None:
             self._printInorderTree(self.root)
 
     def _printInorderTree(self, node):
+        """
+            Method to print a tree inorder
+
+            Args:
+                Node - the starting node
+
+            Returns:
+                None
+        """
         # TODO 1
         if node is not None:
             self._printInorderTree(node.left)
@@ -78,11 +98,33 @@ class Tree:
             self._printInorderTree(node.right)
 
     def _printPreorderTree(self, node):
-        # TODO 2
-        pass
+        """
+            Method to print a tree preorder
+
+            Args:
+                Node - the starting node
+
+            Returns:
+                None
+        """
+        if node is not None:
+            print(str(node.data) + ' ')
+            self._printPreorderTree(node.left)
+            self._printPreorderTree(node.right)
 
     def _printPostorderTree(self, node):
-        # TODO 2
-        pass
+        """
+            Method to print a tree postorder
+
+            Args:
+                Node - the starting node
+
+            Returns:
+                None
+        """
+        if node is not None:
+            self._printPostorderTree(node.left)
+            self._printPostorderTree(node.right)
+            print(str(node.data) + ' ')
 
 
