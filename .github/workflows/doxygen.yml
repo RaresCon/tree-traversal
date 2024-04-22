@@ -16,3 +16,7 @@ jobs:
       run: |
         sudo apt install -y doxygen
         doxygen Doxygen
+    - uses: actions/upload-artifact@v3.0.0
+      with:
+        name: Doxygen_artifact
+        path: doxygen_doc
